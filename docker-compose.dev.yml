@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:${POSTGRES_IMAGE_VERSION:-latest}
+    environment:
+      - POSTGRES_DB=${IMPRO_BIDULE_DATABASE_NAME}
+      - POSTGRES_USER=${IMPRO_BIDULE_DATABASE_USER}
+      - POSTGRES_PASSWORD=${IMPRO_BIDULE_DATABASE_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
