@@ -1,13 +1,14 @@
-import { Show } from 'src/shows/entities/show.entity';
+import { Show } from '@prisma/client';
 
 export class ShowDto implements Show {
 	id: string;
 	src: string;
 	title: string;
-	date: string;
+	date: Date;
 	hour: string;
 	description: string;
 	location: string;
 	places: number;
 	price: number;
+	deletedAt: Date;
 }

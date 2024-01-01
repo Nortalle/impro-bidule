@@ -11,14 +11,15 @@ datasource db {
 }
 
 model Show {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   src         String
   title       String
   date        DateTime
   description String
   location    String
   places      Int
-  price       Decimal
+  price       Float
+  deletedAt   DateTime?
 
   @@map("shows")
 }

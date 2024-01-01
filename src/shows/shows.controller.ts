@@ -16,15 +16,15 @@ export class ShowsController {
 	constructor(private readonly showsService: ShowsService) {}
 
 	@Post()
-	create(@Body() createShowDto: CreateShowDto) {
-		return this.showsService.create(createShowDto);
+	async create(@Body() createShowDto: CreateShowDto) {
+		const newShow = await this.showsService.create(createShowDto);
+		return newShow;
 	}
 
 	@Get()
-	findAll() {
-		console.log('findAll');
-		console.log(this.showsService.findAll());
-		return this.showsService.findAll();
+	async findAll() {
+		const shows = await this.showsService.findAll();
+		return shows;
 	}
 
 	@Get(':id')

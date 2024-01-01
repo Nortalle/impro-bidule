@@ -15,6 +15,9 @@ async function bootstrap() {
 	app.setBaseViewsDir(join(__dirname, '..', 'views'));
 	app.useStaticAssets(join(__dirname, '..', 'public'));
 	app.setViewEngine('njk');
+
+	console.log(new Date().toISOString());
+
 	await app.listen(3000);
 }
 bootstrap();

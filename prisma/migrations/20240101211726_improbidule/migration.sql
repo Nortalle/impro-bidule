@@ -7,7 +7,8 @@ CREATE TABLE "shows" (
     "description" TEXT NOT NULL,
     "location" TEXT NOT NULL,
     "places" INTEGER NOT NULL,
-    "price" DECIMAL(65,30) NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "deletedAt" TIMESTAMP(3),
 
     CONSTRAINT "shows_pkey" PRIMARY KEY ("id")
 );
