@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block body %}
+<section id="spectacle">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">Prochains spectacles</h1>
+      <div class="row">
+				{% for show in shows %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top " src="{{ show.src }}" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-text">{{ show.title }}</h4>
+							<h5 class="card-text">{{ show.date }}</h5>
+							<h6 class="card-text">{{ show.hour }}</h6>
+							<p class="card-text">{{ show.description }}</p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-outline-secondary" disabled>En savoir plus</button>
+									<!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+    </div>
+  </div>
+</section>
+{% endblock %}
