@@ -1,0 +1,53 @@
+## Docker volumes
+postgres-data
+
+## Environment files
+.env
+
+## Linux
+*~
+
+## macOS
+
+# General
+.DS_Store
+
+# Thumbnails
+._*
+
+## Material for MkDocs
+
+# Cache
+.cache
+
+# Output directory
+.mkdocs
+
+## Node
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules
+
+# NestJS build / generated output
+.nest
+
+## Traefik
+acme.json
+
+## Windows
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Windows shortcuts
+*.lnk

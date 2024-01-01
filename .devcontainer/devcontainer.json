@@ -1,0 +1,31 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Impro B!dule devcontainer",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+"remoteUser": "node",
+"runArgs": ["-p=3000:3000"],
+"features": {
+	"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+},
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"dbaeumer.vscode-eslint",
+			"rvest.vs-code-prettier-eslint",
+			"GitHub.copilot",
+			"ms-azuretools.vscode-docker",
+			"Prisma.prisma",
+			"redhat.vscode-yaml",
+			"ronnidc.nunjucks",
+			"GitHub.vscode-github-actions",
+			"EditorConfig.EditorConfig"
+		]
+	}
+},
+// Map the user's SSH directory to the container for SSH signing
+"mounts": [
+	"type=bind,source=${localEnv:HOME}/.ssh,target=${localEnv:HOME}/.ssh,type=bind,consistency=cached"
+]
+}
