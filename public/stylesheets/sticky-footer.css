@@ -1,8 +1,6 @@
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
@@ -43,11 +41,21 @@ body::before {
 
 .rose {
 	color: #ec008c ;
+	border-color: #ec008c ;
+	outline-color: #ec008c;
+}
+
+.rose:hover {
+	color: #2e3192 ;
+	background-color: #ec008c ;
+	border-color: #ec008c ;
+	outline-color: #ec008c;
 }
 
 .btn-outline-primary .btn-primary .btn{
 	color: #ec008c ;
 	border-color: #ec008c ;
+	outline-color: #ec008c;
 }
 
 span {
