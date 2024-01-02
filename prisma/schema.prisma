@@ -21,7 +21,8 @@ model Show {
   country     String
   zip         String
   places      Int
-  price       Float
+  reserved    Int       @default(0)
+  price       Float     @default(0)
   deletedAt   DateTime?
 
   @@map("shows")

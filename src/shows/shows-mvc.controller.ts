@@ -27,12 +27,28 @@ export class ShowsMvcController {
 		return { shows };
 	}
 
+	@Get(':id/edit')
+	@Render('shows/form')
+	async renderEdit(@Param('id') id: string) {
+		const show = await this.showsService.findOne(id);
+
+		return { show };
+	}
+
+	@Get(':id/delete')
+	@Render('shows/list')
+	async renderDelete(@Param('id') id: string) {
+		await this.showsService.remove(id);
+
+		const shows = await this.showsService.findAll();
+
+		return { shows };
+	}
+
 	@Get(':id')
 	@Render('shows/view')
 	async renderOne(@Param('id') id: string) {
 		const show = await this.showsService.findOne(id);
-
-
 
 		return { show };
 	}

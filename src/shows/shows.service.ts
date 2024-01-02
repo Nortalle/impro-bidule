@@ -19,7 +19,9 @@ export class ShowsService {
 	}
 
 	async findAll() {
-		const shows = await this.prisma.show.findMany();
+		const shows = await this.prisma.show.findMany({
+			where: { deletedAt: null },
+		});
 
 		const readShows = shows.map((show) => new ReadShowDto(show));
 		return readShows;

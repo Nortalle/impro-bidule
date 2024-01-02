@@ -12,6 +12,8 @@
 						<th scope="col">Date</th>
 						<th scope="col">Heure</th>
 						<th scope="col">Prix</th>
+						<th scope="col">Places réservées</th>
+						<th scope="col">Voir</th>
 						<th scope="col">Modifier</th>
 						<th scope="col">Supprimer</th>
 					</tr>
@@ -23,6 +25,8 @@
 							<td>{{ show.date }}</td>
 							<td>{{ show.hour }}</td>
 							<td>{{ show.price }}</td>
+							<td>{{ show.reserved }}/{{ show.places }}</td>
+							<td><a href="/shows/{{ show.id }}"><i class="bi bi-eye"></i></a></td>
 							<td><a href="/shows/{{ show.id }}/edit"><i class="bi bi-pencil"></i></a></td>
 							<td><a href="/shows/{{ show.id }}/delete"><i class="bi bi-trash"></i></a></td>
 						</tr>

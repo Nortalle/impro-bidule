@@ -12,6 +12,7 @@ export class ShowDto implements Show {
 	city: string;
 	country: string;
 	places: number;
+	reserved: number;
 	price: number;
 	deletedAt: Date;
 }
