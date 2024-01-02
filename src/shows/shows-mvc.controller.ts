@@ -19,6 +19,14 @@ export class ShowsMvcController {
 		return {};
 	}
 
+	@Get('admin')
+	@Render('shows/list')
+	async renderList() {
+		const shows = await this.showsService.findAll();
+
+		return { shows };
+	}
+
 	@Get(':id')
 	@Render('shows/view')
 	async renderOne(@Param('id') id: string) {
