@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+
+{% block body %}
+<section id="admin">
+  <div class="py-5">
+    <div class="container">
+			<h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">Administration</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Spectacle</th>
+						<th scope="col">Date</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Email</th>
+						<th scope="col">Places réservées</th>
+						<th scope="col">Supprimer</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reservation in reservations %}
+					<tr>
+						<td>{{ reservation.show.name }}</td>
+						<td>{{ reservation.show.date }}</td>
+						<td>{{ reservation.name }}</td>
+						<td>{{ reservation.email }}</td>
+						<td>{{ reservation.seats }}</td>
+						<td><a href="/shows/{{ show.id }}/delete"><i class="bi bi-trash"></i></a></td>
+
+					{% endfor %}
+				</tbody>
+			</table>
+			<a href="/shows/create" class="btn btn-primary">Ajouter une réservation</a>
+		</div>
+	</div>
+</section>
+{% endblock %}

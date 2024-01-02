@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Show {
-  id          String    @id @default(uuid())
+  id          String        @id @default(uuid())
   src         String
   title       String
   date        DateTime
@@ -21,9 +21,22 @@ model Show {
   country     String
   zip         String
   places      Int
-  reserved    Int       @default(0)
-  price       Float     @default(0)
+  reserved    Int           @default(0)
+  price       Float         @default(0)
   deletedAt   DateTime?
+  Reservation Reservation[]
 
   @@map("shows")
+}
+
+model Reservation {
+  id        String    @id @default(uuid())
+  showId    String
+  show      Show      @relation(fields: [showId], references: [id])
+  name      String
+  email     String
+  reserved  Int
+  deletedAt DateTime?
+
+  @@map("reservations")
 }
