@@ -2,26 +2,48 @@
 
 {% block body %}
 <section id="spectacle">
-  <div class="album py-5 bg-light">
+  <div class="album py-5">
     <div class="container">
       <h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">{{ show.title }}</h1>
-      <div class="row">
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top " src="{{ show.src }}" alt="Card image cap">
-						<div class="card-body">
-							<h4 class="card-text">{{ show.title }}</h4>
-							<h5 class="card-text">{{ show.date }}</h5>
-							<h6 class="card-text">{{ show.hour }}</h6>
-							<p class="card-text">{{ show.description }}</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<a href="/shows/{{ show.id }}" class="btn btn-sm btn-outline-secondary">En savoir plus</a>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="card mb-4 box-shadow">
+				{# <img class="card-img-top " src="{{ show.src }}" alt="Card image cap"> #}
+				<div class="card-body">
+					<h4 class="card-text">{{ show.title }}</h4>
+					<h5 class="card-text">{{ show.date }}</h5>
+					<h6 class="card-text">{{ show.hour }}</h6>
+					<h6 class="card-text">{{ show.price }} frs</h6>
+					<p class="card-text">{{ show.description }}</p>
 				</div>
+			</div>
+    </div>
+  </div>
+</section>
+
+<section id="reserver">
+  <div class="album py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">Réservation</h1>
+			<div class="card mb-4 box-shadow">
+				<form class=" m-4" id="form">
+				<!-- Nom -->
+				<div class="form-group">
+					<label for="name">Nom</label>
+					<input type="text" class="form-control" id="name" placeholder="Dupont">
+				</div>
+				<!-- Email -->
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" id="email" placeholder="john.dupont@mail.com">
+					<div class="form-text">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit.</div>
+				</div>
+				<!-- Nombre de places disponibles -->
+				<div class="form-group">
+					<label for="places">Nombre de places</label>
+					<input type="number" min="0" max="5" class="form-control" id="places">
+					<div class="form-text">Pour les grands groupes de plus de cinq personnes, veuillez-nous contacter à <a href=mailto:logistique@impro-fribourg.ch>logistique@impro-fribourg.ch</a></div>
+				</div>
+				<button type="submit" class="btn btn-primary mt-4">Submit</button>
+			</form>
 			</div>
     </div>
   </div>

@@ -1,7 +1,6 @@
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
-
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -11,6 +10,25 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+	background-color: #2e3192;
+	color: #fff200 ;
+}
+
+.rose {
+	color: #ec008c ;
+}
+
+.btn-outline-primary .btn-primary .btn{
+	color: #ec008c ;
+	border-color: #ec008c ;
+}
+
+span {
+	color: #ec008c ;
+}
+
+a {
+	color: #ec008c ;
 }
 
 p {
