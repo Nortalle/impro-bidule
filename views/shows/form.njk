@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+
+{% block body %}
+
+<section id="spectacle">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">Créer un spectacle</h1>
+			<form id="form">
+				<!-- Titre -->
+				<div class="form-group">
+					<label for="title">Titre</label>
+					<input type="text" class="form-control" id="title" placeholder="Match d'improvisation - 24 février - Impro bidule vs Québéquois">
+				</div>
+				<!-- Date et heure -->
+				<div class="form-group">
+					<label for="datetime">Date et heure</label>
+					<input type="datetime-local" class="form-control" id="datetime">
+				</div>
+				<!-- Description -->
+				<div class="form-group">
+					<label for="description">Description</label>
+					<textarea class="form-control" id="description" rows="3"></textarea>
+				</div>
+				<!-- Nombre de places disponibles -->
+				<div class="form-group">
+					<label for="places">Nombre de places disponibles</label>
+					<input type="number" class="form-control" id="places">
+				</div>
+				<!-- Prix -->
+				<div class="form-group">
+					<label for="price">Prix</label>
+					<input type="number" class="form-control" id="price">
+				</div>
+      	<h4 class=" ">Adresse</h4>
+				<!-- Rue -->
+				<div class="form-group">
+					<label for="street">Rue</label>
+					<input type="text" class="form-control" id="street" placeholder="Rue Saint-Pierre Canisius 10">
+				</div>
+				<!-- Code postal -->
+				<div class="form-group">
+					<label for="zip">Code postal</label>
+					<input type="text" class="form-control" id="zip" placeholder="1700">
+				</div>
+				<!-- Ville -->
+				<div class="form-group">
+					<label for="city">Ville</label>
+					<input type="text" class="form-control" id="city" placeholder="Fribourg">
+				</div>
+				<!-- Pays -->
+				<div class="form-group">
+					<label for="country">Pays</label>
+					<input type="text" class="form-control" id="country" placeholder="Suisse">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+    </div>
+  </div>
+</section>
+<script src="/javascripts/send-show-form.js"></script>
+{% endblock %}

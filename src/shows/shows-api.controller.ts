@@ -10,6 +10,7 @@ import {
 import { ShowsService } from './shows.service';
 import { CreateShowDto } from './dto/create-show.dto';
 import { UpdateShowDto } from './dto/update-show.dto';
+import { ReadShowDto } from 'src/shows/dto/read-show.dto';
 
 @Controller('api/shows')
 export class ShowsApiController {
@@ -17,6 +18,7 @@ export class ShowsApiController {
 
 	@Post()
 	async create(@Body() createShowDto: CreateShowDto) {
+		console.log('createShowDto ', createShowDto);
 		const newShow = await this.showsService.create(createShowDto);
 		return newShow;
 	}
@@ -24,6 +26,7 @@ export class ShowsApiController {
 	@Get()
 	async findAll() {
 		const shows = await this.showsService.findAll();
+
 		return shows;
 	}
 

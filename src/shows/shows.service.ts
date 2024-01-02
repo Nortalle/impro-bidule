@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'nestjs-prisma';
 import { CreateShowDto } from './dto/create-show.dto';
 import { UpdateShowDto } from './dto/update-show.dto';
+import { ReadShowDto } from 'src/shows/dto/read-show.dto';
 
 @Injectable()
 export class ShowsService {
@@ -18,13 +19,18 @@ export class ShowsService {
 	}
 
 	async findAll() {
-		return await this.prisma.show.findMany();
+		const shows = await this.prisma.show.findMany();
+
+		const readShows = shows.map((show) => new ReadShowDto(show));
+		return readShows;
 	}
 
 	async findOne(id: string) {
-		return await this.prisma.show.findUnique({
+		const show = await this.prisma.show.findUnique({
 			where: { id },
 		});
+
+		return new ReadShowDto(show);
 	}
 
 	async update(id: string, data: UpdateShowDto) {

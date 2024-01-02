@@ -1,5 +1,6 @@
 import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from 'src/app.service';
+import { ReadShowDto } from 'src/shows/dto/read-show.dto';
 import { ShowsService } from 'src/shows/shows.service';
 
 @Controller()
