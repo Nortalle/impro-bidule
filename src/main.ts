@@ -16,8 +16,6 @@ async function bootstrap() {
 	app.useStaticAssets(join(__dirname, '..', 'public'));
 	app.setViewEngine('njk');
 
-	console.log(new Date().toISOString());
-
 	await app.listen(3000);
 }
 bootstrap();

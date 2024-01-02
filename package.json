@@ -16,9 +16,10 @@
     "dev": "npm run prisma:migrate && nest start --watch",
     "dev:database": "docker-compose --file docker-compose.dev.yml up --detach postgres",
     "build": "npm run prisma:generate && nest build",
-    "start": "npm run prisma:migrate && node .nest/main",
+    "start": "npm run prisma:migrate && node .nest/src/main",
     "prisma:migrate": "prisma migrate dev --name improbidule",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "prisma:seed": "ts-node --transpile-only prisma/seed.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
