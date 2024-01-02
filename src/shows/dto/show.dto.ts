@@ -7,7 +7,10 @@ export class ShowDto implements Show {
 	date: Date;
 	hour: string;
 	description: string;
-	location: string;
+	street: string;
+	zip: string;
+	city: string;
+	country: string;
 	places: number;
 	price: number;
 	deletedAt: Date;

@@ -16,7 +16,10 @@ model Show {
   title       String
   date        DateTime
   description String
-  location    String
+  street      String
+  city        String
+  country     String
+  zip         String
   places      Int
   price       Float
   deletedAt   DateTime?
