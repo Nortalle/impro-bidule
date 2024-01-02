@@ -1,20 +1,20 @@
 {% extends "layout.njk" %}
 
 {% block body %}
-<section id="spectacle">
-  <div class="album py-5">
-    <div class="container">
-      <h1 class="display-5 fw-bold lh-1 mb-4 mt-4 ">{{ show.title }}</h1>
-			<div class="card mb-4 box-shadow">
-				{# <img class="card-img-top " src="{{ show.src }}" alt="Card image cap"> #}
+<section id="about" class="pt-5 ">
+  <div class="container px-4 background-blue">
+    <div class="row gx-4 gx-lg-5 py-lg-5 align-items-center ">
+      <div class="col-lg-6 ">
+
 				<div class="card-body">
-					<h4 class="card-text">{{ show.title }}</h4>
+        <h1 class="display-5 fw-bold lh-1 mt-4 ">{{ show.title }}</h1>
 					<h5 class="card-text">{{ show.date }}</h5>
 					<h6 class="card-text">{{ show.hour }}</h6>
 					<h6 class="card-text">{{ show.price }} frs</h6>
 					<p class="card-text">{{ show.description }}</p>
 				</div>
-			</div>
+      </div>
+      <div class="col-lg-6"><img class="img-fluid rounded" src="/images/match.jpg" alt="Une photo de la troupe" /></div>
     </div>
   </div>
 </section>
@@ -34,13 +34,13 @@
 				<div class="form-group">
 					<label for="email">Email</label>
 					<input type="email" class="form-control" id="email" placeholder="john.dupont@mail.com">
-					<div class="form-text">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit.</div>
+					<div class="form-text yellow">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit.</div>
 				</div>
 				<!-- Nombre de places disponibles -->
 				<div class="form-group">
 					<label for="places">Nombre de places</label>
 					<input type="number" min="0" max="5" class="form-control" id="places">
-					<div class="form-text">Pour les grands groupes de plus de cinq personnes, veuillez-nous contacter à <a href=mailto:logistique@impro-fribourg.ch>logistique@impro-fribourg.ch</a></div>
+					<div class="form-text yellow">Pour les grands groupes de plus de cinq personnes, veuillez-nous contacter à <a href=mailto:logistique@impro-fribourg.ch>logistique@impro-fribourg.ch</a></div>
 				</div>
 				<button type="submit" class="btn btn-primary mt-4">Submit</button>
 			</form>
@@ -48,4 +48,5 @@
     </div>
   </div>
 </section>
+<script src="javascripts/send-reservation-form"></script>
 {% endblock %}

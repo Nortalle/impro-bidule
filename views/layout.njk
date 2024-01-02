@@ -16,8 +16,10 @@
 		<link href="/stylesheets/sticky-footer.css" rel="stylesheet">
 	</head>
 	<body id="page-top">
-		{% include "partials/navbar.njk" %}
-    {% block body %}{% endblock %}
-    {% include "partials/footer.njk" %}
+		<div class="wrapper">
+			{% include "partials/navbar.njk" %}
+			{% block body %}{% endblock %}
+			{% include "partials/footer.njk" %}
+		</div>
   </body>
 </html>
