@@ -13,14 +13,12 @@ services:
       - .env
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
-      interval: 5s
+      interval: 30s
       timeout: 20s
       retries: 3
 
   application:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/nortalle/impro-bidule:${IMPRO_BIDULE_IMAGE_VERSION:-latest}
     ports:
       - 3000:3000
     env_file:
