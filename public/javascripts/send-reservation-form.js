@@ -5,18 +5,33 @@ form.addEventListener('submit', async (e) => {
 
 	const name = document.getElementById('name').value;
 	const email = document.getElementById('email').value;
-	const places = +document.getElementById('places').value;
-
-	console.log('{{ show.id }}');
+	const reserved = +document.getElementById('places').value;
+	const showId = document.getElementById('showId').value;
 
 	const data = {
 		name,
 		email,
-		places,
+		reserved,
+		showId,
 	};
 
+	await fetch(`http://localhost:3000/api/reservation`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(data),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			console.log('Success:', data);
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
 
-
+	window.location.href = '/';
+});
 
 // form.addEventListener('submit', async (e) => {
 // 	e.preventDefault(); // stop form submission
