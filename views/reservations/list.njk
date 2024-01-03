@@ -19,12 +19,12 @@
 				<tbody>
 					{% for reservation in reservations %}
 					<tr>
-						<td>{{ reservation.show.name }}</td>
-						<td>{{ reservation.show.date }}</td>
+						<td>{{ show.title }}</td>
+						<td>{{ show.date }}</td>
 						<td>{{ reservation.name }}</td>
 						<td>{{ reservation.email }}</td>
 						<td>{{ reservation.reserved }}</td>
-						<td><a href="/shows/{{ show.id }}/delete"><i class="bi bi-trash"></i></a></td>
+						<td><a href="/reservations/{{ reservation.id }}/delete"><i class="bi bi-trash"></i></a></td>
 
 					{% endfor %}
 				</tbody>

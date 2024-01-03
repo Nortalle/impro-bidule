@@ -1,6 +1,6 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "Impro B!dule devcontainer",
+	"name": "FoiR UNITED devcontainer",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
